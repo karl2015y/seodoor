@@ -15,6 +15,16 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
+
+            // door_id
+            $table->foreignId('door_id')->references('id')->on('doors');;	
+
+            // Latitude 
+            $table->text('lat');
+
+            // longitude
+            $table->text('lon');
+
             $table->timestamps();
         });
     }

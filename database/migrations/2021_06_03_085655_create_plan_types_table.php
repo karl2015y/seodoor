@@ -20,10 +20,10 @@ class CreatePlanTypesTable extends Migration
             $table->text('name');
 
             // days
-            $table->integer('days')->default(1); 
+            $table->integer('days');
 
-            // counts
-            $table->integer('counts')->default(1); 
+            // door_counts
+            $table->integer('door_counts');
 
             $table->timestamps();
         });

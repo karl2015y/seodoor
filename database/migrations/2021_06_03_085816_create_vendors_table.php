@@ -15,20 +15,21 @@ class CreateVendorsTable extends Migration
     {
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
+
             // plan_id
-            $table->foreignId('user_id')->references('id')->on('users');;	
+            $table->foreignId('plan_id')->references('id')->on('plans');;	
 
             // name
-$table->text('name');
+            $table->text('name');
             
             // phone
-$table->text('phone');
+            $table->text('phone');
             
             // address
-$table->text('address');
+            $table->text('address');
             
             // person_name
-$table->text('person_name');
+            $table->text('person_name');
             
             // person_phone
             $table->text('person_phone');
