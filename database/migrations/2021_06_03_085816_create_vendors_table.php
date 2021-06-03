@@ -16,9 +16,6 @@ class CreateVendorsTable extends Migration
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
 
-            // plan_id
-            $table->foreignId('plan_id')->references('id')->on('plans');;	
-
             // name
             $table->text('name');
             
