@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Plan extends Model
 {
@@ -14,6 +15,31 @@ class Plan extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function getCreatedAtAttribute($date)
+    {
+        if (Carbon::now() > Carbon::parse($date)->addDays(15)) {
+            return Carbon::parse($date);
+        }
+
+        return Carbon::parse($date)->diffForHumans();
+    }
+    public function getUpdatedAtAttribute($date)
+    {
+        if (Carbon::now() > Carbon::parse($date)->addDays(15)) {
+            return Carbon::parse($date);
+        }
+
+        return Carbon::parse($date)->diffForHumans();
+    }
+    public function getStopAtAttribute($date)
+    {
+        if (Carbon::now()->addDays(7) < Carbon::parse($date)) {
+            return Carbon::parse($date);
+        }
+
+        return Carbon::parse($date)->diffForHumans();
+    }
 
     /**
      * 取得該計畫的類型

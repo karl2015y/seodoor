@@ -17,7 +17,10 @@ class CreateLogsTable extends Migration
             $table->id();
 
             // door_id
-            $table->foreignId('door_id')->references('id')->on('doors');;	
+            $table->foreignId('door_id')->references('id')->on('doors');
+
+            // Action 
+            $table->text('action');
 
             // Latitude 
             $table->text('lat');

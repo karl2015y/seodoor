@@ -41,7 +41,7 @@ class CreateDoorsTable extends Migration
             $table->text('to_link');
             
             // note
-            $table->text('note');
+            $table->text('note')->nullable();
 
             $table->timestamps();
         });

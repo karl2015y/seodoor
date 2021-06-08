@@ -20,19 +20,19 @@ class CreateVendorsTable extends Migration
             $table->text('name');
             
             // phone
-            $table->text('phone');
+            $table->text('phone')->nullable();
             
             // address
-            $table->text('address');
+            $table->text('address')->nullable();
             
             // person_name
-            $table->text('person_name');
+            $table->text('person_name')->nullable();
             
             // person_phone
-            $table->text('person_phone');
+            $table->text('person_phone')->nullable();
             
             // note
-            $table->text('note');
+            $table->text('note')->nullable();
 
             $table->timestamps();
         });

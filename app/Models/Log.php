@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Log extends Model
 {
@@ -14,7 +15,14 @@ class Log extends Model
      * @var array
      */
     protected $guarded = [];
+    public function getCreatedAtAttribute($date)
+    {
+        if (Carbon::now() > Carbon::parse($date)->addDays(15)) {
+            return Carbon::parse($date);
+        }
 
+        return Carbon::parse($date)->diffForHumans();
+    }
     /**
      * 取得該Log的門戶
      */
