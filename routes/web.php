@@ -3,9 +3,8 @@
 use App\Http\Controllers\DoorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\VendorController;
-
-
 
 
 /*
@@ -24,6 +23,7 @@ Route::get('/', function () {
 })->name('home');
 
 
+Route::get('/sitemap', [SitemapController::class, 'getSiteMap']);
 Route::get('/{URL}', [DoorController::class, 'show_seodoor'])->name("seodoor");
 Route::post('/{URL}', [DoorController::class, 'store_log_seodoor']);
 
@@ -39,4 +39,7 @@ Route::get('/admin/vendors/{vendor_id}/doors', [DoorController::class, 'index'])
 Route::post('/admin/vendors/{vendor_id}/doors', [DoorController::class, 'store']);
 Route::get('/admin/vendors/{vendor_id}/doors/{id}', [DoorController::class, 'show'])->name("single-door");
 Route::delete('/admin/vendors/{vendor_id}/doors/{id}', [DoorController::class, 'del'])->name("delete-door");
+
+
+
 
