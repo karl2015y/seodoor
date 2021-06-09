@@ -6,6 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{$door->title}}</title>
+    <meta name="description" content="{{$door->content}}">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NSB7HL5');
+    </script>
+    <!-- End Google Tag Manager -->
     <script>
         window.onpageshow = function (event) {
             if (event.persisted) {
@@ -23,13 +33,16 @@
     <link rel="stylesheet" href="/storage/seodoor/css/googlefont.css">
     <link rel="stylesheet" href="/storage/seodoor/css/animate.min.css" />
     <link rel="stylesheet" href="/storage/seodoor/css/style.css">
-    <meta name="description" content="{{$door->content}}">
 
 
 
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSB7HL5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="wrap" style="background-image: url('{{$door->pic}}');">
         <form style="display: none" id="goform" action="" method="post">
             @csrf
@@ -37,7 +50,7 @@
             <input name="action" value="前往">
             <input name="lon" value="0">
             <input name="lat" value="0">
-            <button type="submit" ></button>
+            <button type="submit"></button>
         </form>
     </div>
     <div class="modal">
@@ -58,7 +71,7 @@
                     <div>
                         <h1 style="white-space: pre-line;">{{$door->title}}</h1>
                         <p style="white-space: pre-line;">{{$door->content}}</p>
-                        
+
                         <a id="gogo" href="#">
                             立即前往 GO GO !
                         </a>
@@ -69,7 +82,7 @@
             </div>
         </div>
     </div>
-<script src="/storage/seodoor/js/script.js"></script>
+    <script src="/storage/seodoor/js/script.js"></script>
 
 </body>
 
