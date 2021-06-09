@@ -28,11 +28,11 @@
             history.go(-2);
         }
     </script>
-    <link rel="stylesheet" href="/storage/seodoor/css/reset.css">
+    <link rel="stylesheet" href="{{asset('seodoor/css/reset.css')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="/storage/seodoor/css/googlefont.css">
-    <link rel="stylesheet" href="/storage/seodoor/css/animate.min.css" />
-    <link rel="stylesheet" href="/storage/seodoor/css/style.css">
+    <link rel="stylesheet" href="{{asset('seodoor/css/googlefont.css')}}">
+    <link rel="stylesheet" href="{{asset('seodoor/css/animate.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('seodoor/css/style.css')}}">
 
 
 
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <script src="/storage/seodoor/js/script.js"></script>
+    <script src="{{asset('seodoor/js/script.js')}}"></script>
 
 </body>
 
