@@ -62,10 +62,10 @@ class DoorController extends Controller
             $item['leave_percent'] = round(($leave_count)/$all_count*100, 2);
 
         }
-        $logs['all_count'] = $logs['all_count']==0?1:$logs['all_count'];
-        $logs['all_go_percent'] = round(($logs['go_count']+$logs['leave_count'])/$logs['all_count']*100, 2);
-        $logs['go_percent'] = round(($logs['go_count'])/$logs['all_count']*100, 2);
-        $logs['leave_percent'] = round(($logs['leave_count'])/$logs['all_count']*100, 2);
+        $logs['all_count_tmp'] = $logs['all_count']==0?1:$logs['all_count'];
+        $logs['all_go_percent'] = round(($logs['go_count']+$logs['leave_count'])/$logs['all_count_tmp']*100, 2);
+        $logs['go_percent'] = round(($logs['go_count'])/$logs['all_count_tmp']*100, 2);
+        $logs['leave_percent'] = round(($logs['leave_count'])/$logs['all_count_tmp']*100, 2);
 
         return view('admin.doors', [
             'logs_data' => $logs,
