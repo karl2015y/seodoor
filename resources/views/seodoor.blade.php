@@ -56,7 +56,7 @@
     <div class="modal">
         <a id="hidenlink" href="{{$door->to_link}}" style="display: none;">.</a>
         <div class="modal-content ">
-            <a id="close" class="close-modal" href="#">
+            <a id="close" class="close-modal" href="#close">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -72,7 +72,7 @@
                         <h1 style="white-space: pre-line;">{{$door->title}}</h1>
                         <p style="white-space: pre-line;">{{$door->content}}</p>
 
-                        <a id="gogo" href="#">
+                        <a id="gogo" href="#gogo">
                             立即前往 GO GO !
                         </a>
                     </div>
