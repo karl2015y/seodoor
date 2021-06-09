@@ -144,7 +144,11 @@ class DoorController extends Controller
         if ($data == null) {
             abort(404);
         }
-        $data->logs()->create($request->all());
+        $data->logs()->create([
+            'action'=>$request['action']?$request['action']:'未知',
+            'lat'=>$request['lat']?$request['lat']:'0',
+            'lon'=>$request['lon']?$request['lon']:'0',
+        ]);
 
         return redirect($data->to_link);;
     }
