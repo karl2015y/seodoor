@@ -22,7 +22,7 @@ class SitemapController extends Controller
         if (!$sitemap->isCached()) {
             $doors = Door::all();
             foreach ($doors as $value) {
-                $sitemap->add(url($value['URL']));
+                $sitemap->add(secure_asset($value['URL']));
             }
             // add item to the sitemap (url, date, priority, freq)
             
