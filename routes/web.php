@@ -43,7 +43,7 @@ Route::delete('/admin/vendors/{vendor_id}/doors/{id}', [DoorController::class, '
 
 Route::get('admin/update', function () {
     // execute command
-    exec("cd ~/seodoor; git pull; php artisan config:cache; php artisan route:cache; php artisan view:cache;", $output);
+    exec("cd /home/ubuntu/seodoor/;  git pull; php artisan config:cache; php artisan route:cache; php artisan route:cache", $output);
     return $output;
     // print output from command
     // $this->comment(implode(PHP_EOL, $output));
